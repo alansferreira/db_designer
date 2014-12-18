@@ -1,0 +1,119 @@
+html, body {
+
+}
+body
+{
+    margin:0; 
+    padding:0; 
+}
+#ui-designer-area table thead tr,
+#ui-designer-area table thead tr th, 
+#ui-designer-area table tbody tr, 
+#ui-designer-area table tbody tr td, 
+#ui-designer-area td input,
+#ui-designer-area td select{
+    height:14px;
+    margin: 1px;
+    padding: 1px;
+    line-height: 14px;    
+
+}
+.cell-editors input{
+    height:14px;
+    margin: 1px;
+    padding: 1px;
+    line-height: 14px;
+    position:absolute;
+    display:none;
+}
+.ui-table-design {
+    background-color: white;
+    position: absolute;
+    width: 500px;
+}
+    .ui-table-design thead tr th a {
+        padding: 0 1px;
+        font-size: 6.5px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+    }
+
+#ui-designer-area .row, 
+#ui-designer-area .row input,
+#ui-designer-area .row select{
+    height:14px;
+    margin: 1px;
+    padding: 1px;
+    line-height: 14px;
+}
+.ui-table-design-header,
+.ui-table-design-subheader {
+    background-color:#f5f5f5;
+}
+.table-title-icon
+{
+    border-style: 0;
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    float: right;
+    cursor: hand;
+    width: 16px;
+    height: 16px;
+}
+.db-model1 {
+    overflow:scroll;
+    border: 1px solid #999999;
+    padding: 0px;
+    margin: 0px;
+    overflow: scroll;
+    background-image: url('img/designer-grid.png');
+    background-repeat: repeat;
+
+    padding-top: 0px;
+    -webkit-box-sizing: border-box; /* Safari/WebKit */ 
+    -moz-box-sizing: border-box; /* Firefox */
+    -ms-box-sizing: border-box; /* IE8 */
+    box-sizing: border-box; /* W3C Property */
+}
+.db-model1, 
+.global-console1{
+    height: 650px; 
+    overflow:scroll;
+}
+
+.global-console1 {
+    width:220px;
+}
+
+.ui-cell-text-editor{
+    position:absolute;
+    display:none;
+}
+.column-selected td{
+    /*border:1px solid red;
+    background-color: darkblue;*/
+}
+.primary-key-row{
+
+}
+.ui-table-back-drop {
+    position:relative;
+    display:none;
+    z-index: -1;
+}
+.ui-table-constraints {
+    position:relative;
+    left: -150px;
+    top: 0px;
+}
+    .ui-table-constraints table thead,
+    .ui-table-constraints table thead tr,
+    .ui-table-constraints table thead tr th,
+    .ui-table-constraints table tbody,
+    .ui-table-constraints table tbody tr,
+    .ui-table-constraints table tbody tr td {
+        background-color: white;
+    }

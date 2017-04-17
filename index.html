@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--<html ng-app='app'>-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to electron Mail mass application!</title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+    <style>
+        body{
+            /*margin: 2px;
+            -webkit-app-region: drag;
+            */
+        }
+        .no-drag {
+            -webkit-app-region: no-drag;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="position:relative; height: 80px;">
+        <div id="div_a" style="position:absolute; top:5px; left:5px;" >Div A</div>
+        <div id="div_b" style="position:absolute; top:50px; left:150px;">Div B</div>
+    </div>
+
+
+</body>
+<script>
+        // You can also require other files to run in this process
+        require('./index.renderer.js');
+</script>
+
+</html>

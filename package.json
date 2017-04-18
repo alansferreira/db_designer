@@ -34,7 +34,9 @@
     "linq": "3.0.8",
     "nedb": "1.8.0",
     "jquery": "3.2.1",
-    "jq-simple-connect": "1.0.0"
+    "jquery-ui-dist": "1.12.1",
+    "jsplumb": "2.3.2"
+
   }
   
 

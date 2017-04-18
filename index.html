@@ -5,30 +5,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to electron Mail mass application!</title>
-    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+    <link href="./node_modules/jquery-ui-dist/jquery-ui.min.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="./css.css">
+
     <style>
-        body{
+        body {
             /*margin: 2px;
             -webkit-app-region: drag;
             */
         }
+        
         .no-drag {
             -webkit-app-region: no-drag;
         }
     </style>
 </head>
-<body>
 
-    <div style="position:relative; height: 80px;">
-        <div id="div_a" style="position:absolute; top:5px; left:5px;" >Div A</div>
-        <div id="div_b" style="position:absolute; top:50px; left:150px;">Div B</div>
+<body>
+    <div class="designer">
+
+        <div class="ent" id="Department">
+            <ul class="pk">
+                <li>DepartmentID</li>
+            </ul>
+            <ul class="cols">
+                <li>Name</li>
+                <li>Description</li>
+            </ul>
+        </div>
+
+        <div class="ent" id="Employee">
+            <ul class="pk">
+                <li>EmployyeID</li>
+            </ul>
+            <ul class="cols">
+                <li>Name</li>
+                <li>Surname</li>
+                <li>Email</li>
+                <li>Phone</li>
+            </ul>
+            <ul class="fk">
+                <li fk="Position">PositionID</li>
+                <li fk="Department">DepartmentID</li>
+            </ul>
+        </div>
+
+        <div class="ent" id="Position">
+            <ul class="pk">
+                <li>PositionID</li>
+            </ul>
+            <ul class="cols">
+                <li>Name</li>
+                <li>Description</li>
+            </ul>
+        </div>
     </div>
 
 
+    http://www.lively-kernel.org/repository/webwerkstatt/users/tmohr/libs/jsPlumb/demo/jquery/dynamicAnchorsDemo.html 
+    
+    http://codepen.io/yurigor/pen/vXYomB
+
 </body>
+<script>window.$ = window.jQuery = require('jquery');</script>
+<script src="./node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
 <script>
-        // You can also require other files to run in this process
-        require('./index.renderer.js');
+    // You can also require other files to run in this process
+    require('./index.renderer');
+
 </script>
 
 </html>

@@ -1,5 +1,7 @@
 var appConfig = require('./app.config');
-var connector = require('./jq-simple-connect');
+
+require('jsplumb');
+
 
 var Datastore = require('nedb');
 var angular = require('angular');
@@ -21,8 +23,6 @@ var app = angular.module('app', [
   require('angular-sanitize')
 ]);
 
-connector.connect("#div_a", "#div_b", {radius: 8, color: 'green'});
-
 var _currentWindow = electron.getCurrentWindow();
 
 app.config(function ($mdThemingProvider) {
@@ -34,7 +34,6 @@ app.config(function ($mdThemingProvider) {
 });
 
 var mainControll = app.controller('mainControll', function ($scope, $mdDialog, $sce) {
-    
 
     $scope.data = {
         ui: {}, 
@@ -97,8 +96,50 @@ var mainControll = app.controller('mainControll', function ($scope, $mdDialog, $
             console.log('saved!')
         });
     };
+});
 
-    
-    
 
+
+// var sourceAnchors = [[0.2, 0, 0, -1], [1, 0.2, 1, 0], [0.8, 1, 0, 1], [0, 0.8, -1, 0] ];
+// var targetAnchors = [[0.6, 0, 0, -1], [1, 0.6, 1, 0], [0.4, 1, 0, 1], [0, 0.4, -1, 0] ];
+// var exampleColor = '#00f';
+// var exampleDropOptions = {
+//          tolerance:'touch',
+//          hoverClass:'dropHover',
+//          activeClass:'dragActive'
+// };
+// var connector = [ "Bezier", { cssClass:"connectorClass", hoverClass:"connectorHoverClass" } ];
+// var connectorStyle = {
+//     gradient:{stops:[[0, exampleColor], [0.5, '#09098e'], [1, exampleColor]]},
+//     lineWidth:5,
+//     strokeStyle:exampleColor
+// };
+// var hoverStyle = {
+//     strokeStyle:"#449999"
+// };
+// var overlays = [ ["Diamond", { fillStyle:"#09098e", width:15, length:15 } ] ];
+// var endpoint = ["Dot", { cssClass:"endpointClass", radius:10, hoverClass:"endpointHoverClass" } ];
+// var endpointStyle = { fillStyle:exampleColor };
+// var anEndpoint = {
+//     endpoint:endpoint,
+//     paintStyle:endpointStyle,
+//     hoverPaintStyle:{ fillStyle:"#449999" },
+//     isSource:true, 
+//     isTarget:true, 
+//     maxConnections:-1, 
+//     connector:connector,
+//     connectorStyle:connectorStyle,
+//     connectorHoverStyle:hoverStyle,
+//     connectorOverlays:overlays
+// };
+
+// jsPlumb.DefaultDragOptions = { cursor: 'pointer', zIndex:2000 };
+// endpoints = {};
+// // ask jsPlumb for a selector for the window class
+// divsWithWindowClass = jsPlumb.getSelector(".ent");
+
+
+$(".ent").draggable({   
+    containment: 'body',   
+    scroll: false 
 });

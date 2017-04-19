@@ -7,7 +7,7 @@ body{
   border-radius: 50%;
   border: 1px solid #000;
   position: relative;
-  top: 6px;
+  top: 4px;
   left: 6px;
   background-color: #ff3b47;
   border-color: #9d252b;
@@ -28,8 +28,10 @@ body{
 
 .fakeMenu {
   width: 100%;
-  height: 25px;
-  background-color: #bbb;
+  height: 24px;
+  background: linear-gradient(0deg, #d8d8d8, #ececec);
+  border-top: 1px solid white;
+  border-bottom: 1px solid #b3b3b3;
   margin: 0 auto;
 }
 

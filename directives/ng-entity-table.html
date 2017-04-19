@@ -1,0 +1,11 @@
+<div class="ent" id="{{table.name}}" >
+    <ul ng-repeat="pk in table.columns | filter: {isPrimaryKey: true}" class="pk" >
+        <li>{{pk.name}}</li>
+    </ul>
+    <ul ng-repeat="c in table.columns | filter: {isPrimaryKey: false}" class="cols">
+        <li>{{c.name}}</li>
+    </ul>
+    <ul ng-repeat="fk in table.foreignKeys" class="fk">
+        <li ng-repeat="ref in fk.columns"></li>
+    </ul>            
+</div>

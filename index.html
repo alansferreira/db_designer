@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--<html ng-app='app'>-->
-<html>
+<html ng-app='app'>
 
 <head>
     <meta charset="UTF-8">
@@ -22,9 +21,14 @@
 </head>
 
 <body>
-    <div class="designer">
+    <div class="designer" ng-controller="designerControll">
 
-        <div class="ent" id="Department">
+        <entity-table ng-repeat="e in data.entities" table="e"></entity-table>
+
+        <!--<div id='sampleDiv' style="position: absolute">
+            sample drag
+        </div>-->
+        <!--<div class="ent" id="Department">
             <ul class="pk">
                 <li>DepartmentID</li>
             </ul>
@@ -58,7 +62,7 @@
                 <li>Name</li>
                 <li>Description</li>
             </ul>
-        </div>
+        </div>-->
     </div>
 
 
@@ -68,8 +72,30 @@
 
 </body>
 <script>window.$ = window.jQuery = require('jquery');</script>
-<script src="./node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
 <script>
+    require('jsPlumb');
+    var __plumbInst = jsPlumb.getInstance();
+    
+    var plumbDef = __plumbInst.importDefaults({
+        Connector: ["Flowchart"],
+        Anchors: "AutoDefault"
+    });
+    //jsPlumb.draggable(jsPlumb.getSelector("#sampleDiv"));
+    // __plumbInst.connect({
+    //     source: "Employee",
+    //     target: "Position",
+    //     scope: "someScope",
+    //     anchor: "AutoDefault"
+    // });
+
+    // __plumbInst.connect({
+    //     source: "Employee",
+    //     target: "Employee",
+    //     scope: "someScope",
+    //     connector: "Bezier",
+    //     anchor: "AutoDefault"
+    // });
+    
     // You can also require other files to run in this process
     require('./index.renderer');
 

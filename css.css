@@ -33,13 +33,16 @@ body {
 	position: relative;
 	z-index: 3;
 }
-
+.designer{
+	width: 300px;
+	height: 300px;
+}
 .ent {
 	display: block;
 	float: left;
-	position: relative;
+	position: absolute;
 	font-size: 12px;
-	margin: 20px;
+	/*margin: 20px;*/
 	padding: 5px 10px 5px 5px;
 	min-width: 100px;
 	background-color: #fff;

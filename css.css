@@ -131,3 +131,13 @@ body {
 	border-right: 1px solid #000;
 	border-bottom: 1px solid #000;
 }
+
+input.fieldName{
+	line-height: 16px;
+	border: solid 1px #C67704;
+	padding: 0px;
+	margin: 0px;
+}
+input.fieldName.hidden{
+	display: none;
+}

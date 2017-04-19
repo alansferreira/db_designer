@@ -8,7 +8,7 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({titleBarStyle: 'hidden-inset', width: 800, height: 600, frame: true, show: true});
+  mainWindow = new BrowserWindow({titleBarStyle: 'hidden-inset', width: 800, height: 600, frame: false, show: true});
   mainWindow.setMenuBarVisibility(false);
   
   // and load the index.html of the app.

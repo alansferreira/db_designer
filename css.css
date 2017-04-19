@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: Arial, sans-ser;
 	font-size: 14px;
 	color: #444;
 	background-color: #DDD;
@@ -43,9 +43,8 @@ body {
 	position: absolute;
 	font-size: 12px;
 	/*margin: 20px;*/
-	padding: 5px 10px 5px 5px;
 	min-width: 100px;
-	background-color: #fff;
+	background-color: transparent;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -57,16 +56,12 @@ body {
 }
 
 .ent .header {
-	content: attr(id);
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
+	min-width: 100%;
 	padding: 5px 5px 5px 10px;
 	font-size: 12px;
 	font-weight: bold;
 	color: #eee;
-	border-top: 1px solid #CCC;
+	border-top: 0px solid #CCC;
 	background-color: #444;
 	background: -webkit-linear-gradient(#444, #333);
 	background: -moz-linear-gradient(#444, #333);
@@ -78,9 +73,16 @@ body {
 	border-radius: 3px 3px 0px 0px;
 }
 
+.ent .body{
+	background-color: #fff;
+	padding: 2px 2px 2px 2px;
+
+	margin: 0px;
+	border: none 0px;
+
+}
 .ent ul {
 	list-style: none;
-	margin: 5px 10px 5px 5px;
 }
 
 .ent ul li {
@@ -95,7 +97,6 @@ body {
 }
 
 .ent ul.pk {
-	margin-top: 30px;
 }
 
 .ent ul.pk li {
@@ -141,3 +142,6 @@ input.fieldName{
 input.fieldName.hidden{
 	display: none;
 }
+
+
+

@@ -15,9 +15,9 @@ db.ui.loadDatabase();
 db.history.loadDatabase();
 
 window.app = angular.module('app', [
-    //   require('angular-material'), 
-    //   require('angular-material-icons'), 
-    require('angular-sanitize'), 
+    require('angular-material'), 
+    require('angular-material-icons'), 
+    require('angular-sanitize'),
 ]);
 
 require('./directives/ng-entity-table')
@@ -25,27 +25,44 @@ require('./directives/ng-entity-table')
 
 var _currentWindow = electron.getCurrentWindow();
 
-// app.config(function ($mdThemingProvider) {
-//     $mdThemingProvider
-//         .theme('default')
-//         .primaryPalette('yellow')
-//         .accentPalette('grey', { 'default': '700' })
-//         .dark();
-// });
+app.config(function ($mdThemingProvider) {
+    $mdThemingProvider
+        .theme('default')
+        .primaryPalette('yellow')
+        .accentPalette('grey', { 'default': '700' })
+        .dark();
+});
+
+
+var { DB2 } = require("cds-parsers-amd");
+var { parseColumn, parseTable, Table, Column, ForeignKey, ColumnReferenceSpec, ColumnIndexSpec } = DB2();
 
 var designerControll = window.app.controller('designerControll', function ($scope, $sce) {
 
     $scope.data = {
         entities: [
-            {
+            new Table({
                 name: "Department",
                 columns: [
                     { name: "DepartmentID", type: "INT", isPrimaryKey: true },
                     { name: "Name", type: "VARCHAR", isPrimaryKey: false },
                     { name: "Description", type: "VARCHAR", isPrimaryKey: false },
+                ],
+                foreignKeys: [
+                    new ForeignKey({
+                        name: 'ref2',
+                        targetTable: 'Employee',
+                        columns: [new ColumnReferenceSpec({ mapReference: { 'DepartmentId': 'Name' } })]
+                    }),
+                    new ForeignKey({
+                        name: 'ref2',
+                        targetTable: 'Department',
+                        columns: [new ColumnReferenceSpec({ mapReference: { 'Name': 'Name' } })]
+                    })
+
                 ]
-            },
-            {
+            }),
+            new Table({
                 name: "Employee",
                 columns: [
                     { name: "EmployyeID", type: "INT", isPrimaryKey: true },
@@ -53,16 +70,23 @@ var designerControll = window.app.controller('designerControll', function ($scop
                     { name: "Surname", type: "VARCHAR", isPrimaryKey: false },
                     { name: "Email", type: "VARCHAR", isPrimaryKey: false },
                     { name: "Phone", type: "VARCHAR", isPrimaryKey: false },
+                ],
+                foreignKeys: [
+                    new ForeignKey({
+                        name: 'ref1',
+                        targetTable: 'Position',
+                        columns: [new ColumnReferenceSpec({ mapReference: { 'Surname': 'PositionID' } })]
+                    })
                 ]
-            },
-            {
+            }),
+            new Table({
                 name: "Position",
                 columns: [
                     { name: "PositionID", type: "INT", isPrimaryKey: true },
                     { name: "Name", type: "VARCHAR", isPrimaryKey: false },
                     { name: "Description", type: "VARCHAR", isPrimaryKey: false },
                 ]
-            },
+            }),
         ],
         history: []
     };

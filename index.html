@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to electron Mail mass application!</title>
-    <link href="./node_modules/jquery-ui-dist/jquery-ui.min.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="./node_modules/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="./node_modules/angular-material-icons/angular-material-icons.css">
     <link rel="stylesheet" href="./css.css">
 
     <style>
@@ -21,48 +22,33 @@
 </head>
 
 <body>
+
+    <md-toolbar class="md-accent drag-window">
+        <div class="md-toolbar-tools titlebar">
+            <md-button class="md-icon-button  no-drag" aria-label="Send" ng-click="send()">
+                <ng-md-icon icon="send" md-colors="{fill: 'primary'}"></ng-md-icon>
+                <md-tooltip>Start sending</md-tooltip>
+            </md-button>
+            
+            <span flex>Sending to: {{sendingTo.address}}</span>
+
+
+            <md-button class="md-icon-button no-drag" ng-click="saveProfile($event)">
+                <ng-md-icon icon="save" md-colors="{fill: 'grey'}"></ng-md-icon>
+                <md-tooltip>Save current profile</md-tooltip>
+            </md-button>
+            <md-button class="md-icon-button no-drag" ng-click="showConfig($event)">
+                <ng-md-icon icon="more_vert" md-colors="{fill: 'grey'}"></ng-md-icon>
+                <md-tooltip>SMTP and auth stuffs...</md-tooltip>
+            </md-button>
+            
+        </div>
+    </md-toolbar>
+
     <div class="designer" ng-controller="designerControll">
 
         <entity-table ng-repeat="e in data.entities" table="e"></entity-table>
 
-        <!--<div id='sampleDiv' style="position: absolute">
-            sample drag
-        </div>-->
-        <!--<div class="ent" id="Department">
-            <ul class="pk">
-                <li>DepartmentID</li>
-            </ul>
-            <ul class="cols">
-                <li>Name</li>
-                <li>Description</li>
-            </ul>
-        </div>
-
-        <div class="ent" id="Employee">
-            <ul class="pk">
-                <li>EmployyeID</li>
-            </ul>
-            <ul class="cols">
-                <li>Name</li>
-                <li>Surname</li>
-                <li>Email</li>
-                <li>Phone</li>
-            </ul>
-            <ul class="fk">
-                <li fk="Position">PositionID</li>
-                <li fk="Department">DepartmentID</li>
-            </ul>
-        </div>
-
-        <div class="ent" id="Position">
-            <ul class="pk">
-                <li>PositionID</li>
-            </ul>
-            <ul class="cols">
-                <li>Name</li>
-                <li>Description</li>
-            </ul>
-        </div>-->
     </div>
 
 

@@ -35,7 +35,8 @@
     "nedb": "1.8.0",
     "jquery": "3.2.1",
     "jquery-ui-dist": "1.12.1",
-    "jsplumb": "2.3.2"
+    "jsplumb": "2.3.2", 
+    "cds-parsers-amd": "^0.1.42-0"
 
   }
   

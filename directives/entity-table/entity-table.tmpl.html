@@ -1,4 +1,4 @@
-<div class="ent">
+<div class="ent" ng-style="{left: table.left, top: table.top}">
     <div class="header">{{table.name}}</div>
     <div class="body">
         <ul ng-repeat="pk in table.columns | filter: {isPrimaryKey: true}" class="pk" >

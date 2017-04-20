@@ -22,7 +22,6 @@ window.app = angular.module('app', [
 
 
 
-require('./directives/chrome-tabs/chrome-tab.directive')(window.app);
 require('./directives/entity-table/entity-table.directive')(window.app)
 
 
@@ -43,59 +42,53 @@ var { parseColumn, parseTable, Table, Column, ForeignKey, ColumnReferenceSpec, C
 var designerControll = window.app.controller('designerControll', function ($scope, $sce) {
 
     $scope.data = {
-        diagrams: [
-            {
-                title: 'tab 1', 
-                entities: [
-                    new Table({
-                        name: "Department",
-                        columns: [
-                            { name: "DepartmentID", type: "INT", isPrimaryKey: true },
-                            { name: "Name", type: "VARCHAR", isPrimaryKey: false },
-                            { name: "Description", type: "VARCHAR", isPrimaryKey: false },
-                        ],
-                        foreignKeys: [
-                            new ForeignKey({
-                                name: 'ref2',
-                                targetTable: 'Employee',
-                                columns: [new ColumnReferenceSpec({ mapReference: { 'DepartmentId': 'Name' } })]
-                            }),
-                            new ForeignKey({
-                                name: 'ref2',
-                                targetTable: 'Department',
-                                columns: [new ColumnReferenceSpec({ mapReference: { 'Name': 'Name' } })]
-                            })
-
-                        ]
-                    }),
-                    new Table({
-                        name: "Employee",
-                        columns: [
-                            { name: "EmployyeID", type: "INT", isPrimaryKey: true },
-                            { name: "Name", type: "VARCHAR", isPrimaryKey: false },
-                            { name: "Surname", type: "VARCHAR", isPrimaryKey: false },
-                            { name: "Email", type: "VARCHAR", isPrimaryKey: false },
-                            { name: "Phone", type: "VARCHAR", isPrimaryKey: false },
-                        ],
-                        foreignKeys: [
-                            new ForeignKey({
-                                name: 'ref1',
-                                targetTable: 'Position',
-                                columns: [new ColumnReferenceSpec({ mapReference: { 'Surname': 'PositionID' } })]
-                            })
-                        ]
-                    }),
-                    new Table({
-                        name: "Position",
-                        columns: [
-                            { name: "PositionID", type: "INT", isPrimaryKey: true },
-                            { name: "Name", type: "VARCHAR", isPrimaryKey: false },
-                            { name: "Description", type: "VARCHAR", isPrimaryKey: false },
-                        ]
-                    }),
+        entities: [
+            new Table({
+                name: "Department",
+                columns: [
+                    { name: "DepartmentID", type: "INT", isPrimaryKey: true },
+                    { name: "Name", type: "VARCHAR", isPrimaryKey: false },
+                    { name: "Description", type: "VARCHAR", isPrimaryKey: false },
                 ],
-            }, 
-            {title: 'tab 2'}, 
+                foreignKeys: [
+                    new ForeignKey({
+                        name: 'ref2',
+                        targetTable: 'Employee',
+                        columns: [new ColumnReferenceSpec({ mapReference: { 'DepartmentId': 'Name' } })]
+                    }),
+                    new ForeignKey({
+                        name: 'ref2',
+                        targetTable: 'Department',
+                        columns: [new ColumnReferenceSpec({ mapReference: { 'Name': 'Name' } })]
+                    })
+
+                ]
+            }),
+            new Table({
+                name: "Employee",
+                columns: [
+                    { name: "EmployyeID", type: "INT", isPrimaryKey: true },
+                    { name: "Name", type: "VARCHAR", isPrimaryKey: false },
+                    { name: "Surname", type: "VARCHAR", isPrimaryKey: false },
+                    { name: "Email", type: "VARCHAR", isPrimaryKey: false },
+                    { name: "Phone", type: "VARCHAR", isPrimaryKey: false },
+                ],
+                foreignKeys: [
+                    new ForeignKey({
+                        name: 'ref1',
+                        targetTable: 'Position',
+                        columns: [new ColumnReferenceSpec({ mapReference: { 'Surname': 'PositionID' } })]
+                    })
+                ]
+            }),
+            new Table({
+                name: "Position",
+                columns: [
+                    { name: "PositionID", type: "INT", isPrimaryKey: true },
+                    { name: "Name", type: "VARCHAR", isPrimaryKey: false },
+                    { name: "Description", type: "VARCHAR", isPrimaryKey: false },
+                ]
+            }),
         ],
         history: []
     };

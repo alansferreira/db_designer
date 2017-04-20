@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="./node_modules/angular-material-icons/angular-material-icons.css">
     <link rel="stylesheet" href="./css.css">
     <link rel="stylesheet" href="./linux-window.css">
-    <link rel="stylesheet" href="./directives/chrome-tabs/chrome-tabs.css">
-    <link rel="stylesheet" href="./directives/chrome-tabs/chrome-tabs-dark-theme.css">
     
 
     <style>
@@ -26,16 +24,14 @@
 
 <body ng-controller="designerControll"> 
 
-    <!--<div class=fakeMenu>
+    <div class=fakeMenu>
         <div class="fakeButtons fakeClose"></div>
         <div class="fakeButtons fakeMinimize"></div>
         <div class="fakeButtons fakeZoom"></div>
-    </div>-->
+    </div>
 
-    <chrome-tab tabs="data.diagrams" tab-changed="methods.tabChanged"></chrome-tab>
-    
-    <div class="designer no-drag-window" ng-repeat="diagram in data.activeDiagram">
-        <entity-table ng-repeat="e in diagram.entities" table="e"></entity-table>
+    <div class="designer no-drag-window">
+        <entity-table ng-repeat="e in data.entities" table="e"></entity-table>
     </div>
 
 

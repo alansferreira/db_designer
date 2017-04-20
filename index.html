@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="./node_modules/angular-material-icons/angular-material-icons.css">
     <link rel="stylesheet" href="./css.css">
     <link rel="stylesheet" href="./linux-window.css">
-    
+
 
     <style>
         body {
-            margin: 2px;
             -webkit-app-region: drag;
         }
         
@@ -22,29 +21,40 @@
     </style>
 </head>
 
-<body ng-controller="designerControll"> 
-
-    <div class=fakeMenu>
-        <div class="fakeButtons fakeClose"></div>
-        <div class="fakeButtons fakeMinimize"></div>
-        <div class="fakeButtons fakeZoom"></div>
+<body ng-controller="designerControll">
+    <div class="gnome-top-bar">
+        <button class="activities-button fa fa-linux"></button>
+        <ul class="menu-bar">
+            <li class="menu-bar-item">File</li>
+            <li class="menu-bar-item">Edit</li>
+            <li class="menu-bar-item">Select</li>
+            <li class="menu-bar-item">View</li>
+            <li class="menu-bar-item">Image</li>
+            <li class="menu-bar-item">Layer</li>
+            <li class="menu-bar-item">Colors</li>
+            <li class="menu-bar-item">Tools</li>
+            <li class="menu-bar-item">Filters</li>
+            <li class="menu-bar-item">Windows</li>
+            <li class="menu-bar-item">Help</li>
+        </ul>
     </div>
-
-    <div class="designer no-drag-window">
-        <entity-table ng-repeat="e in data.entities" table="e"></entity-table>
-    </div>
-
+    
+    <entity-table ng-repeat="e in data.entities" table="e" ng-click='uievents.entity_click($event, e)'></entity-table>
+    
 
     <!--http://www.lively-kernel.org/repository/webwerkstatt/users/tmohr/libs/jsPlumb/demo/jquery/dynamicAnchorsDemo.html 
     
     http://codepen.io/yurigor/pen/vXYomB-->
 
 </body>
-<script>window.$ = window.jQuery = require('jquery');</script>
+<script>
+    window.$ = window.jQuery = require('jquery');
+</script>
+
 <script>
     require('jsPlumb');
     var __plumbInst = jsPlumb.getInstance();
-    
+
     var plumbDef = __plumbInst.importDefaults({
         Connector: ["Flowchart"],
         Anchors: "AutoDefault"
@@ -64,7 +74,7 @@
     //     connector: "Bezier",
     //     anchor: "AutoDefault"
     // });
-    
+
     // You can also require other files to run in this process
     require('./index.renderer');
 

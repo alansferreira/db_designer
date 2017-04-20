@@ -61,7 +61,7 @@ var designerControll = window.app.controller('designerControll', function ($scop
                         targetTable: 'Department',
                         columns: [new ColumnReferenceSpec({ mapReference: { 'Name': 'Name' } })]
                     })
-
+                
                 ]
             }),
             new Table({
@@ -98,6 +98,10 @@ var designerControll = window.app.controller('designerControll', function ($scop
         return $sce.trustAsHtml(html);
     }
 
+    $scope.uievents = {};
+    $scope.uievents.entity_click = function(evt, entity){
+        console.log({left: entity.left, top: entity.top});
+    };
     db.ui.findOne({}, function (err, doc) {
         var _apply = function (_err, _doc) { $scope.data.ui = _doc; };
         if (err || !doc) {

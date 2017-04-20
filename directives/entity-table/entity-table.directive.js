@@ -33,7 +33,19 @@ function registerDirective(appModule) {
                 }
 
                 //jsPlumb.makeTarget(element, {anchor: 'Continuous'});
-                jsPlumb.draggable($(element), { containment: true, grid: [4, 4] });
+                jsPlumb.draggable($(element), { 
+                    containment: true, 
+                    grid: [4, 4], 
+                    scroll: true,
+                    drag: function(event, ui){
+                        var pos = $(event.el).position();
+                        table.top = pos.top;
+                        table.left = pos.left;
+                    },
+                    start: function(event, ui){
+
+                    }
+                });
                 refreshConnections();
 
             },

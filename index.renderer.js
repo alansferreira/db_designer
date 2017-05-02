@@ -4,6 +4,10 @@ var Datastore = require('nedb');
 var angular = require('angular');
 var path = require('path');
 var electron = require('electron').remote;
+var fs = require('fs');
+
+
+
 var dialog = electron.dialog;
 
 var db = {
@@ -36,62 +40,66 @@ app.config(function ($mdThemingProvider) {
 });
 
 
-var { DB2 } = require("cds-parsers-amd");
+var { DB2 } = require("cds-parsers");
 var { parseColumn, parseTable, Table, Column, ForeignKey, ColumnReferenceSpec, ColumnIndexSpec } = DB2();
 
 var designerControll = window.app.controller('designerControll', function ($scope, $sce) {
 
     $scope.data = {
         entities: [
-            new Table({
-                name: "Department",
-                columns: [
-                    { name: "DepartmentID", type: "INT", isPrimaryKey: true },
-                    { name: "Name", type: "VARCHAR", isPrimaryKey: false },
-                    { name: "Description", type: "VARCHAR", isPrimaryKey: false },
-                ],
-                foreignKeys: [
-                    new ForeignKey({
-                        name: 'ref2',
-                        targetTable: 'Employee',
-                        columns: [new ColumnReferenceSpec({ mapReference: { 'DepartmentId': 'Name' } })]
-                    }),
-                    new ForeignKey({
-                        name: 'ref2',
-                        targetTable: 'Department',
-                        columns: [new ColumnReferenceSpec({ mapReference: { 'Name': 'Name' } })]
-                    })
+            // new Table({
+            //     name: "Department",
+            //     columns: [
+            //         { name: "DepartmentID", type: "INT", isPrimaryKey: true },
+            //         { name: "Name", type: "VARCHAR", isPrimaryKey: false },
+            //         { name: "Description", type: "VARCHAR", isPrimaryKey: false },
+            //     ],
+            //     foreignKeys: [
+            //         new ForeignKey({
+            //             name: 'ref2',
+            //             targetTable: 'Employee',
+            //             columns: [new ColumnReferenceSpec({ mapReference: { 'DepartmentId': 'Name' } })]
+            //         }),
+            //         new ForeignKey({
+            //             name: 'ref2',
+            //             targetTable: 'Department',
+            //             columns: [new ColumnReferenceSpec({ mapReference: { 'Name': 'Name' } })]
+            //         })
                 
-                ]
-            }),
-            new Table({
-                name: "Employee",
-                columns: [
-                    { name: "EmployyeID", type: "INT", isPrimaryKey: true },
-                    { name: "Name", type: "VARCHAR", isPrimaryKey: false },
-                    { name: "Surname", type: "VARCHAR", isPrimaryKey: false },
-                    { name: "Email", type: "VARCHAR", isPrimaryKey: false },
-                    { name: "Phone", type: "VARCHAR", isPrimaryKey: false },
-                ],
-                foreignKeys: [
-                    new ForeignKey({
-                        name: 'ref1',
-                        targetTable: 'Position',
-                        columns: [new ColumnReferenceSpec({ mapReference: { 'Surname': 'PositionID' } })]
-                    })
-                ]
-            }),
-            new Table({
-                name: "Position",
-                columns: [
-                    { name: "PositionID", type: "INT", isPrimaryKey: true },
-                    { name: "Name", type: "VARCHAR", isPrimaryKey: false },
-                    { name: "Description", type: "VARCHAR", isPrimaryKey: false },
-                ]
-            }),
+            //     ]
+            // }),
+            // new Table({
+            //     name: "Employee",
+            //     columns: [
+            //         { name: "EmployyeID", type: "INT", isPrimaryKey: true },
+            //         { name: "Name", type: "VARCHAR", isPrimaryKey: false },
+            //         { name: "Surname", type: "VARCHAR", isPrimaryKey: false },
+            //         { name: "Email", type: "VARCHAR", isPrimaryKey: false },
+            //         { name: "Phone", type: "VARCHAR", isPrimaryKey: false },
+            //     ],
+            //     foreignKeys: [
+            //         new ForeignKey({
+            //             name: 'ref1',
+            //             targetTable: 'Position',
+            //             columns: [new ColumnReferenceSpec({ mapReference: { 'Surname': 'PositionID' } })]
+            //         })
+            //     ]
+            // }),
+            // new Table({
+            //     name: "Position",
+            //     columns: [
+            //         { name: "PositionID", type: "INT", isPrimaryKey: true },
+            //         { name: "Name", type: "VARCHAR", isPrimaryKey: false },
+            //         { name: "Description", type: "VARCHAR", isPrimaryKey: false },
+            //     ]
+            // }),
         ],
         history: []
     };
+
+    var db2Script = new String(fs.readFileSync('./db2-sample.sql'));
+    $scope.data.entities = parseTable(db2Script);
+        
 
     $scope.methods = {};
     $scope.methods.trustAsHtml = function (html) {

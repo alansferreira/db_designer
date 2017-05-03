@@ -31,12 +31,13 @@
     "angular-messages": "^1.6.3",
     "angular-route": "^1.6.3",
     "angular-sanitize": "^1.6.3",
-    "cds-parsers": "0.1.49-0",
+    "cds-parsers": "0.1.50-0",
     "draggabilly": "^2.1.1",
     "jquery": "3.2.1",
     "jquery-ui-dist": "1.12.1",
     "jsplumb": "2.3.2",
     "linq": "3.0.8",
-    "nedb": "1.8.0"
+    "nedb": "1.8.0", 
+    "font-awesome": "4.7.0"
   }
 }

@@ -2,10 +2,38 @@
     <div class="header">{{table.name}}</div>
     <div class="body">
         <ul ng-repeat="pk in table.columns | filter: {isPrimary: true}" class="pk" >
-            <li>{{pk.name}}</li>
+            <li>{{pk.name}} &nbsp;
+                <strong>
+                    <i>{{pk.type}}
+                        <span ng-if="pk.precision || pk.scale">
+                            (
+                            <span ng-if="pk.precision">{{pk.precision}}<span ng-if="pk.scale">, </span></span>
+                            <span ng-if="pk.scale">{{pk.precision}}</span>
+                            )
+                        </span> 
+                    </i>
+                </strong>
+                &nbsp;
+                <span ng-if="!pk.isNullable">NN</span>
+                <span ng-if="pk.isAutoIncrement"><span>{{pk.increment.seed}}</span> <span> +{{pk.increment.step}}</span></span>
+            </li>
         </ul>
         <ul ng-repeat="c in table.columns | filter: {isPrimary: false}" class="cols">
-            <li>{{c.name}}</li>
+            <li>{{c.name}} &nbsp;
+                <strong>
+                    <i>{{c.type}}
+                        <span ng-if="c.precision || c.scale">
+                            (
+                            <span ng-if="c.precision">{{c.precision}}<span ng-if="c.scale">, </span></span>
+                            <span ng-if="c.scale">{{c.precision}}</span>
+                            )
+                        </span> 
+                    </i>
+                <strong>
+                &nbsp;
+                <span ng-if="!c.isNullable">NN</span>
+                <span ng-if="c.isAutoIncrement"><span>{{c.increment.seed}}</span> <span> +{{c.increment.step}}</span></span>
+            </li>
         </ul>
         <ul ng-repeat="fk in table.foreignKeys" class="fk">
             <li ng-repeat="ref in fk.columns"></li>

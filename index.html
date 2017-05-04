@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="./node_modules/angular-material-icons/angular-material-icons.css">
     <link rel="stylesheet" href="./css.css">
     <link rel="stylesheet" href="./linux-window.css">
+    
     <link rel="stylesheet" href="./directives/entity-table/entity-table.css">
+    <link rel="stylesheet" href="./directives/entity-column/entity-column.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,700,700i">
     
@@ -42,8 +45,11 @@
         </ul>
     </div>
     
+    <div style="min-width: 100%; min-height:100%" >
 
-    <entity-table ng-repeat="e in data.entities" table="e" ng-click='uievents.entity_click($event, e)'></entity-table>
+        <entity-table ng-repeat="e in data.entities" table="e" ng-click='uievents.entity_click($event, e)' ></entity-table>
+
+    </div>
     
 
     <!--http://www.lively-kernel.org/repository/webwerkstatt/users/tmohr/libs/jsPlumb/demo/jquery/dynamicAnchorsDemo.html 

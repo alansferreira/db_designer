@@ -1,0 +1,37 @@
+<li ng-keydown="fn_Keydown" ng-class="{'column': true, 'pk': column.isPrimary}" >
+    <span ng-show="column.isPrimary" class='fa fa-key'/>
+    <span ng-show="column.type=='VARCHAR'"><span class='fa fa-quote-right'/></span>
+    <span ng-show="column.type=='CHAR'"><span class='fa fa-quote-left'/></span>
+    <span ng-show="column.type=='INTEGER'"><span  class='fa fa-hashtag'/></span>
+    <span ng-show="column.type=='DECIMAL'"><span  class='fa fa-hashtag'/>.<span  class='fa fa-hashtag'/></span>
+    <span ng-show="column.type=='NUMBER'"><span  class='fa fa-hashtag'/>.<span  class='fa fa-hashtag'/></span>
+    <span ng-show="column.type=='DATE'" class='fa fa-calendar-o'></span>
+    <span ng-show="column.type=='TIME'" class='fa fa-time'></span>
+    <span ng-show="column.type=='TIMESTAMP'" class='fa fa-clock-o'></span>
+    &nbsp;
+    {{column.name}} 
+    &nbsp;
+    <strong ng-if="!column.isCondensedView">
+        <i>
+            <span ng-if="column.precision || column.scale">
+                (
+                <span ng-if="column.precision">{{column.precision}}<span ng-if="column.scale">, </span></span>
+                <span ng-if="column.scale">{{column.precision}}</span>
+                )
+            </span> 
+        </i>
+    </strong>
+    <strong ng-if="column.isCondensedView">
+        <i>{{column.type}}
+            <span ng-if="column.precision || column.scale">
+                (
+                <span ng-if="column.precision">{{column.precision}}<span ng-if="column.scale">, </span></span>
+                <span ng-if="column.scale">{{column.precision}}</span>
+                )
+            </span> 
+        </i>
+    <strong>
+    &nbsp;
+    <span ng-if="!column.isNullable">NN</span>
+    <span ng-if="column.isAutoIncrement"><span>{{column.increment.seed}}</span> <span> +{{column.increment.step}}</span></span>
+</li>

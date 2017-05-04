@@ -31,6 +31,8 @@
     "angular-messages": "^1.6.3",
     "angular-route": "^1.6.3",
     "angular-sanitize": "^1.6.3",
+    "angular-multiple-selection": "0.0.3",
+     
     "cds-parsers": "0.1.50-0",
     "draggabilly": "^2.1.1",
     "jquery": "3.2.1",

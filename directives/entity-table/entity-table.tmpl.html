@@ -2,71 +2,10 @@
     <div class="header">{{table.name}}</div>
     <div class="body">
         <ul ng-repeat="pk in table.columns | filter: {isPrimary: true}" class="pk" >
-            <li>
-                <span class='fa fa-key'/>
-
-                <span ng-show="pk.type=='VARCHAR'"><span class='fa fa-quote-right'/></span>
-                <span ng-show="pk.type=='CHAR'"><span class='fa fa-quote-left'/></span>
-                <span ng-show="pk.type=='INTEGER'"><span  class='fa fa-hashtag'/></span>
-                <span ng-show="pk.type=='DECIMAL'"><span  class='fa fa-hashtag'/>.<span  class='fa fa-hashtag'/></span>
-                <span ng-show="pk.type=='NUMBER'"><span  class='fa fa-hashtag'/>.<span  class='fa fa-hashtag'/></span>
-                <span ng-show="pk.type=='DATE'" class='fa fa-calendar-o'></span>
-                <span ng-show="pk.type=='TIME'" class='fa fa-time'></span>
-                <span ng-show="pk.type=='TIMESTAMP'" class='fa fa-clock-o'></span>
-                &nbsp;
-                {{pk.name}} &nbsp;
-                <strong ng-if="!table.isCondensedView">
-                    <i>{{pk.type}}
-                        <span ng-if="pk.precision || pk.scale">
-                            (
-                            <span ng-if="pk.precision">{{pk.precision}}<span ng-if="pk.scale">, </span></span>
-                            <span ng-if="pk.scale">{{pk.precision}}</span>
-                            )
-                        </span> 
-                    </i>
-                </strong>
-                &nbsp;
-                <span ng-if="!pk.isNullable">NN</span>
-                <span ng-if="pk.isAutoIncrement"><span>{{pk.increment.seed}}</span> <span> +{{pk.increment.step}}</span></span>
-            </li>
+            <entity-column column="pk"></entity-column>
         </ul>
         <ul ng-repeat="c in table.columns | filter: {isPrimary: false}" class="cols">
-            <li>
-                <span ng-show="c.type=='VARCHAR'"><span class='fa fa-quote-right'/></span>
-                <span ng-show="c.type=='CHAR'"><span class='fa fa-quote-left'/></span>
-                <span ng-show="c.type=='INTEGER'"><span  class='fa fa-hashtag'/></span>
-                <span ng-show="c.type=='DECIMAL'"><span  class='fa fa-hashtag'/>.<span  class='fa fa-hashtag'/></span>
-                <span ng-show="c.type=='NUMBER'"><span  class='fa fa-hashtag'/>.<span  class='fa fa-hashtag'/></span>
-                <span ng-show="c.type=='DATE'" class='fa fa-calendar-o'></span>
-                <span ng-show="c.type=='TIME'" class='fa fa-time'></span>
-                <span ng-show="c.type=='TIMESTAMP'" class='fa fa-clock-o'></span>
-                &nbsp;
-                {{c.name}} 
-                &nbsp;
-                <strong ng-if="!table.isCondensedView">
-                    <i>
-                        <span ng-if="c.precision || c.scale">
-                            (
-                            <span ng-if="c.precision">{{c.precision}}<span ng-if="c.scale">, </span></span>
-                            <span ng-if="c.scale">{{c.precision}}</span>
-                            )
-                        </span> 
-                    </i>
-                </strong>
-                <strong ng-if="table.isCondensedView">
-                    <i>{{c.type}}
-                        <span ng-if="c.precision || c.scale">
-                            (
-                            <span ng-if="c.precision">{{c.precision}}<span ng-if="c.scale">, </span></span>
-                            <span ng-if="c.scale">{{c.precision}}</span>
-                            )
-                        </span> 
-                    </i>
-                <strong>
-                &nbsp;
-                <span ng-if="!c.isNullable">NN</span>
-                <span ng-if="c.isAutoIncrement"><span>{{c.increment.seed}}</span> <span> +{{c.increment.step}}</span></span>
-            </li>
+            <entity-column column="c"></entity-column>
         </ul>
         <ul ng-repeat="fk in table.foreignKeys" class="fk">
             <li ng-repeat="ref in fk.columns"></li>

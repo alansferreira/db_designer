@@ -2,12 +2,18 @@ var path = require('path');
 var pendingConnections = [];
 var addedEntities = {};
 
+
 /**
  * Register chrome-tabs directive on predefined angular module
  * @param {*} appModule predefined angular module 
  * var app = angular.module('app', []); require('chrome-tab.directive')(app);
  */
 function registerDirective(appModule) {
+    /**
+     * register directive depencencies
+     */
+    require('../entity-column/entity-column.directive')(appModule);
+
 
     return appModule.directive('entityTable', function () {
         return {
@@ -34,7 +40,7 @@ function registerDirective(appModule) {
 
                 //jsPlumb.makeTarget(element, {anchor: 'Continuous'});
                 jsPlumb.draggable($(element), { 
-                    containment: true, 
+                    //containment: true, 
                     grid: [4, 4], 
                     scroll: true,
                     drag: function(event, ui){

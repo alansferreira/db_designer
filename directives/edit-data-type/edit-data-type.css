@@ -47,6 +47,21 @@
 	list-style: none;
 }
 
+.ent ul li {
+	color: #666;
+	padding-top: 1px;
+	line-height: 16px;
+	padding-left: 20px;
+}
+
+.ent ul.pk {
+}
+
+.ent ul.pk li {
+  padding-left: 7px;
+	color: #C24704;
+}
+
 .ent ul.fk li {
 	color: #8FA63C;
 }

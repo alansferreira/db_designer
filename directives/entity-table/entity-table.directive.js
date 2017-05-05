@@ -24,7 +24,7 @@ function registerDirective(appModule) {
             },
 
             templateUrl: path.join(__dirname, 'entity-table.tmpl.html'),
-
+            
             link: function (scope, element) {
                 var { table } = scope;
                 if (!table) return;
@@ -43,6 +43,7 @@ function registerDirective(appModule) {
                     //containment: true, 
                     grid: [4, 4], 
                     scroll: true,
+                    handle: ".header",
                     drag: function(event, ui){
                         var pos = $(event.el).position();
                         table.top = pos.top;

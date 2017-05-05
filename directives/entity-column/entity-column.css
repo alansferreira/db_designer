@@ -8,7 +8,12 @@
 
 .ent .column.pk {
 }
+.ent .column-name{
 
+}
+.contenteditable{
+	
+}
 .ent .column.pk {
   	padding-left: 7px;
 	color: #C24704;

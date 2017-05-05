@@ -9,8 +9,7 @@ var editor = null;
 function registerDirective(appModule) {
 
     return appModule.directive('entityColumn', function () {
-
-        return {
+        var directive =  {
             restrict: 'E',
             replace: true,
             scope: {
@@ -21,17 +20,22 @@ function registerDirective(appModule) {
 
             link: function (scope, element) {
                 var { datatype, datatypes } = scope;
-                scope.fn_Keydown = fn_Keydown;
-
-
+                
+                // $('.column-name', element).mousedown(name_mousedown);
+                // $('.column-type', element).mousedown(type_mousedown);
+                // $('.column-name', element).mousedown(name_mousedown);
             },
 
         };
-        function fn_Keydown(evt){
-            console.log(evt);
-        }
+        function name_mousedown(e){
+            e.preventDefault();
+            e.cancelBubble = true;
+            e.bubbles = false;
+            console.log('name click');
+            console.log(e);
+        };
 
-
+        return directive;
     });
 
 };

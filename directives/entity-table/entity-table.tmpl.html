@@ -1,11 +1,11 @@
 <div class="ent no-drag-window" ng-style="{left: table.left, top: table.top}">
     <div class="header">{{table.name}}</div>
     <div class="body">
-        <ul ng-repeat="pk in table.columns | filter: {isPrimary: true}" class="pk" >
-            <entity-column column="pk"></entity-column>
+        <ul class="pk" >
+            <entity-column ng-repeat="pk in table.columns | filter: {isPrimary: true}"  column="pk"></entity-column>
         </ul>
-        <ul ng-repeat="c in table.columns | filter: {isPrimary: false}" class="cols">
-            <entity-column column="c"></entity-column>
+        <ul >
+            <entity-column ng-repeat="c in table.columns | filter: {isPrimary: false}" column="c"></entity-column>
         </ul>
         <ul ng-repeat="fk in table.foreignKeys" class="fk">
             <li ng-repeat="ref in fk.columns"></li>

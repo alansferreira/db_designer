@@ -6,7 +6,7 @@ var path = require('path');
 var electron = require('electron').remote;
 var fs = require('fs');
 
-
+var ngDragDrop = require('angular-drag-and-drop-lists');
 
 var dialog = electron.dialog;
 

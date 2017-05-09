@@ -14,12 +14,12 @@ body {
 	background-color: #DDD;
 }
 
-::selection {
+/*::selection {
 	background: transparent;
 }
 ::-moz-selection {
 	background: transparent;
-}
+}*/
 
 #view {
 	width: 100%;

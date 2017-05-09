@@ -2,6 +2,7 @@ var appConfig = require('./app.config');
 
 var Datastore = require('nedb');
 var angular = require('angular');
+var ngXeditable = require('angular-xeditable');
 var path = require('path');
 var electron = require('electron').remote;
 var fs = require('fs');
@@ -18,10 +19,12 @@ var db = {
 db.ui.loadDatabase();
 db.history.loadDatabase();
 
+
 window.app = angular.module('app', [
     require('angular-material'), 
     require('angular-material-icons'), 
-    require('angular-sanitize')
+    require('angular-sanitize'), 
+    'xeditable'
 ]);
 
 

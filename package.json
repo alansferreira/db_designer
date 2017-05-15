@@ -40,6 +40,7 @@
     "jsplumb": "2.3.2",
     "linq": "3.0.8",
     "nedb": "1.8.0", 
-    "font-awesome": "4.7.0"
+    "font-awesome": "4.7.0", 
+    "js-editable.angular": "1.2.18"
   }
 }

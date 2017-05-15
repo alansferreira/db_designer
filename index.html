@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./directives/entity-table/entity-table.css">
     <link rel="stylesheet" href="./directives/entity-column/entity-column.css">
 
+    <link rel="stylesheet" href="./node_modules/js-editable.jquery/dist/js-editable.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,700,700i">
     
@@ -47,8 +49,9 @@
     
     <div style="min-width: 100%; min-height:100%" >
 
-        <entity-table ng-repeat="e in data.entities" table="e" ng-click='uievents.entity_click($event, e)' ></entity-table>
+        <entity-table ng-repeat="e in data.entities" table="e" ></entity-table>
 
+        <input type="text" id="column-input-name" style="z-index: 1000">
     </div>
     
 
@@ -60,6 +63,7 @@
 <script>
     window.$ = window.jQuery = require('jquery');
 </script>
+<script src="./node_modules/js-editable.jquery/js-editable-jquery.js"></script>
 
 <script>
     require('jsPlumb');

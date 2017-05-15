@@ -9,7 +9,9 @@
 .ent .column.pk {
 }
 .ent .column-name{
-
+	user-select: all;
+	-moz-user-select: all;
+	-webkit-user-select: text
 }
 .contenteditable{
 	

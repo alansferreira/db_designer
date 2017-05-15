@@ -1,5 +1,4 @@
 .ent {
-	
 	display: block;
 	float: left;
 	position: absolute;
@@ -14,10 +13,10 @@
 	-moz-box-shadow: 0 1px 3px #666;
 	box-shadow: 0 1px 3px #666;
 	z-index: 2;
-	cursor: move;
 }
 
 .ent .header {
+	cursor: move;
 	min-width: 100%;
 	padding: 5px 5px 5px 10px;
 	font-size: 12px;

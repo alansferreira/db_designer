@@ -9,7 +9,7 @@
     <span ng-show="column.type=='TIME'" class='fa fa-time'></span>
     <span ng-show="column.type=='TIMESTAMP'" class='fa fa-clock-o'></span>
     &nbsp;
-    <span class="column-name"> <span>{{column.name}}</span>  </span>
+    <span class="column-name" editable edt-value="column.name" edt-input="'#column-input-name'">{{column.name}}</span>
     &nbsp;
     <strong ng-if="!column.isCondensedView">
         <i>

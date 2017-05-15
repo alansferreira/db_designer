@@ -27,14 +27,6 @@ function registerDirective(appModule) {
             },
 
         };
-        function name_mousedown(e){
-            e.preventDefault();
-            e.cancelBubble = true;
-            e.bubbles = false;
-            console.log('name click');
-            console.log(e);
-        };
-
         return directive;
     });
 

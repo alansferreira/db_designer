@@ -24,16 +24,9 @@ function registerDirective(appModule) {
             link: function (scope, element) {
                 var { datatype, datatypes } = scope;
                 
-                scope.onCommitColumnName= function(){
-                    // var c = parseColumn(scope.column.name);
-                    // if(c && c.name && c.type && c.precision && c.scale){
-                    //     scope.column.name = c.name;
-                    //     scope.column.type = c.type;
-                    //     scope.column.precision = c.precision;
-                    //     scope.column.scale = c.scale;
-                    // }
-                    console.log(scope.column);
-                }
+                // scope.onCommitColumnName= function(){
+                //     console.log(scope.column);
+                // }
 
                 // $('.column-name', element).mousedown(name_mousedown);
                 // $('.column-type', element).mousedown(type_mousedown);

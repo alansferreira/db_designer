@@ -45,7 +45,7 @@ app.config(function ($mdThemingProvider) {
 
 
 var { DB2 } = require("cds-parsers");
-var { parseColumn, parseTable, Table, Column, ForeignKey, ColumnReferenceSpec, ColumnIndexSpec } = DB2();
+var { parseColumn, parseTable, Table, Column, ForeignKey, ColumnReferenceSpec, ColumnIndexSpec } = DB2;
 
 var designerControll = window.app.controller('designerControll', function ($scope, $sce) {
 
@@ -103,7 +103,7 @@ var designerControll = window.app.controller('designerControll', function ($scop
 
     var db2Script = new String(fs.readFileSync('./db2-sample.sql'));
     $scope.data.entities = parseTable(db2Script);
-        
+    console.log($scope.data.entities);
 
     $scope.methods = {};
     $scope.methods.trustAsHtml = function (html) {

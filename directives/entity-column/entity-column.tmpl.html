@@ -1,4 +1,4 @@
-<li ng-class="{'column': true, 'pk': column.isPrimary}" >
+<div ng-class="{'column': true, 'pk': column.isPrimary}" >
     <span ng-show="column.isPrimary" class='fa fa-key'/>
     <span ng-show="column.type=='VARCHAR'"><span class='fa fa-quote-right'/></span>
     <span ng-show="column.type=='CHAR'"><span class='fa fa-quote-left'/></span>
@@ -34,4 +34,4 @@
     &nbsp;
     <span ng-if="!column.isNullable">NN</span>
     <span ng-if="column.isAutoIncrement"><span>{{column.increment.seed}}</span> <span> +{{column.increment.step}}</span></span>
-</li>
+    </div>

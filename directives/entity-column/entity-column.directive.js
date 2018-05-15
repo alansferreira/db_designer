@@ -1,5 +1,5 @@
 var { DB2 } = require("cds-parsers");
-var { parseColumn, parseTable, Table, Column, ForeignKey, ColumnReferenceSpec, ColumnIndexSpec } = DB2();
+var { parseColumn, parseTable, Table, Column, ForeignKey, ColumnReferenceSpec, ColumnIndexSpec } = DB2;
 
 var path = require('path');
 var editor = null;

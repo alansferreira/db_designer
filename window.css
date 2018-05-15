@@ -1,0 +1,372 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #444;
+  background: url("http://i1-news.softpedia-static.com/images/news2/This-Is-the-Default-Wallpaper-of-the-GNOME-3-12-Linux-Desktop-426383-2.jpg");
+  background-size: cover;
+}
+
+.gnome-top-bar {
+  width: 100%;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.activities-button {
+  background: transparent;
+  color: #fff;
+  border: 0;
+  padding: 0 .8em;
+}
+
+.app-icon {
+  height: 80%;
+  opacity: .8;
+}
+
+.menu-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu-bar-item {
+  color: #f0f0f0;
+  cursor: pointer;
+  padding: 0 .7em;
+  font-weight: 100;
+  font-size: .8em;
+}
+
+.gnome-calendar {
+  color: #fff;
+  margin: auto;
+  font-size: .8em;
+}
+
+.window {
+  margin: 1em auto;
+  width: 80%;
+  height: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.2);
+  border-radius: 8px 8px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-title {
+  color: #f0f0f0;
+  font-weight: 200;
+}
+
+.top-bar {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #b4b4b4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #F3F3F3;
+}
+
+.separator {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.tab-group {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  height: 2.2em;
+}
+
+.tab {
+  height: 100%;
+  width: 8em;
+  margin-top: 2px;
+  background: #fff;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  border-radius: .4em .4em 0 0;
+  position: relative;
+  -webkit-transform: perspective(100px) rotateX(30deg);
+          transform: perspective(100px) rotateX(30deg);
+}
+.tab.active {
+  border-bottom: 0;
+  z-index: 2;
+}
+
+.btn {
+  min-width: 32px;
+  height: 32px;
+  border: none;
+  outline: none;
+  background: none;
+  color: #343838;
+  font-size: .8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.btn .fa {
+  margin: auto;
+}
+.btn .fa + span {
+  margin-left: .4em;
+}
+.btn:not(.btn-close) {
+  border-radius: 3px;
+  background: #f4f4f2;
+  border: 1px solid #BDBFBD;
+}
+.btn:not(.btn-close):not(:disabled):hover {
+  background: #ebebeb;
+}
+.btn:not(.btn-close):not(:disabled):active, .btn:not(.btn-close):not(:disabled).active {
+  background: #d4d4d4;
+}
+.btn:not(.btn-close):not(:disabled).active {
+  font-weight: bold;
+  text-shadow: none;
+}
+.btn:first-child {
+  margin-left: 8px;
+}
+.btn:last-child {
+  margin-right: 8px;
+}
+.btn:disabled {
+  color: #A7ABA7;
+}
+
+.btn-group .btn {
+  border-left: none;
+  border-radius: 0;
+  float: left;
+}
+.btn-group .btn span {
+  padding: 0 .5em;
+}
+.btn-group .btn:first-child {
+  border-radius: 3px 0 0 3px;
+  border-left: 1px solid #BDBFBD;
+}
+.btn-group .btn:last-child {
+  border-radius: 0 3px 3px 0;
+}
+.btn-group .btn:first-child:nth-last-child(1), .btn-group .btn:first-child:nth-last-child(2) {
+  border-right: 1px solid #BDBFBD;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input:checked + label.btn {
+  background: #d4d4d4;
+}
+
+.search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -32px;
+  width: 100%;
+  height: 32px;
+  background: #F2F2F2;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+.search-bar.active {
+  margin-top: 0;
+}
+
+.window-title {
+  margin: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  color: #aca9a2;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.btn-close {
+  margin-left: 12px;
+  color: #4D6067;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: #fff;
+}
+
+.toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  background: #F3F3F3;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.toolbar.right {
+  width: 10em;
+  border-left: 1px solid #b4b4b4;
+}
+.toolbar.left {
+  padding-top: .5em;
+  width: 5em;
+  border-right: 1px solid #b4b4b4;
+}
+.toolbar [type="radio"] {
+  display: none;
+}
+.toolbar [type="radio"]:checked + .tool-btn {
+  box-shadow: inset 0 0 .2em #999;
+  color: #2CCDAD;
+}
+
+.tool-btn {
+  padding: .4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 2em;
+  height: 2em;
+  border: 0;
+  background: none;
+  color: #444;
+  border-radius: .2em;
+}
+
+.color-squares {
+  width: 2em;
+  height: 1.4em;
+  background: #222;
+  position: relative;
+  z-index: 2;
+}
+.color-squares:after {
+  display: block;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  top: .5em;
+  left: .5em;
+  background: #fff;
+  border: 1px solid #999;
+}
+
+.canvas-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+}
+
+.ruler-x, .ruler-y {
+  width: 100%;
+  margin-left: .8em;
+  height: .8em;
+  background-image: -webkit-linear-gradient(bottom, #fff 0, #fff 20%, transparent 100%), -webkit-linear-gradient(left, #333 0, #333 1px, transparent 1px, transparent 100%), -webkit-linear-gradient(left, #999 0, #999 1px, transparent 1px, transparent 100%);
+  background-image: linear-gradient(to top, #fff 0, #fff 20%, transparent 100%), linear-gradient(to right, #333 0, #333 1px, transparent 1px, transparent 100%), linear-gradient(to right, #999 0, #999 1px, transparent 1px, transparent 100%);
+  background-size: 100% 100%, 1cm 100%, 1mm 30%;
+  background-repeat: repeat-x;
+}
+
+.ruler-y {
+  -webkit-transform: rotateZ(90deg) rotateX(180deg);
+          transform: rotateZ(90deg) rotateX(180deg);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  margin-left: 0;
+}
+
+.canvas {
+  margin: 2em auto;
+  width: 400px;
+  height: 300px;
+  background: #fff;
+  border: 1px dashed #b4b4b4;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  position: absolute;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A7DBD8;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5fbdb8;
+}

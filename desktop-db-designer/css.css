@@ -1,0 +1,34 @@
+/* Icons from iconfinder.com
+http://www.iconfinder.com/search/?q=iconset%3Asiena
+*/
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: Arial, sans-ser;
+	font-size: 14px;
+	color: #444;
+	background-color: #DDD;
+}
+
+/*::selection {
+	background: transparent;
+}
+::-moz-selection {
+	background: transparent;
+}*/
+
+#view {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 3;
+}
+.designer{
+	width: 500px;
+	height: 500px;
+}
+

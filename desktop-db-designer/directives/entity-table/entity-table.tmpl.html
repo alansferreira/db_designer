@@ -1,0 +1,16 @@
+<div class="eer-table no-drag-window" ng-style="{left: table.left, top: table.top}">
+    <div class="header">{{table.name}}</div>
+    <div class='column-group'>
+        Columns
+    </div>
+    
+    <entity-column ng-repeat="pk in table.columns | filter: {isPrimary: true}" column="pk"></entity-column>
+    <entity-column ng-repeat="c in table.columns | filter: {isPrimary: false}" column="c"></entity-column>
+
+    <div class='constraint-group'>
+        Constraints
+    </div>
+    <div ng-repeat="fk in table.foreignKeys" class="fk">
+        <div ng-repeat="ref in fk.columns"></div>
+    </div>
+</div>

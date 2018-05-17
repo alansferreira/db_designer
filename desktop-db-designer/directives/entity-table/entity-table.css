@@ -1,0 +1,153 @@
+/* v2 */
+body{
+	font-family: 'Lucida Console';
+	font-size: 14px;
+  }
+  .eer-table{
+	position: absolute;
+
+	display: inline-block;
+	border: 2px solid #007acc;
+	max-width: 400px;
+	background-color: #f5f5f5;
+  }
+  
+  .eer-table .header {
+	padding: 3px;
+	padding-bottom: 15px;
+	background-color: #007acc;
+	color: white;
+  }
+  
+  .eer-table .column-group {
+	padding: 3px;
+	background-color: #dcdcdc;
+	color: black;
+  }
+  .eer-table .constraints-group {
+	padding: 3px;
+	background-color: #dcdcdc;
+	color: black;
+  }
+  
+  .eer-table .column {
+	padding: 3px;
+	padding-left: 18px;
+  }
+  .eer-table .pk {
+	font-weight: bold;
+	background-color: lightgoldenrodyellow;
+  }
+  
+  .eer-table .column .separator{
+	padding-left: 20px;
+	float: right;
+  }
+  .eer-table .column i{
+	float: right;
+	padding: 0px 3px 3px 3px; 
+  }
+  .eer-table i.fa-key {
+	color: red;
+  }
+  
+  .eer-table i.fa-bolt {
+	color: darkgoldenrod;
+  }
+  
+  
+
+
+
+
+
+
+
+/* v1 */
+.ent {
+	display: block;
+	float: left;
+	position: absolute;
+	font-size: 12px;
+	/*margin: 20px;*/
+	min-width: 100px;
+	background-color: transparent;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 3px #666;
+	-moz-box-shadow: 0 1px 3px #666;
+	box-shadow: 0 1px 3px #666;
+	z-index: 2;
+}
+
+.ent .header {
+	cursor: move;
+	min-width: 100%;
+	padding: 5px 5px 5px 10px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #eee;
+	border-top: 0px solid #CCC;
+	background-color: #444;
+	background: -webkit-linear-gradient(#444, #333);
+	background: -moz-linear-gradient(#444, #333);
+	background: -o-linear-gradient(#444, #333);
+	background: -ms-linear-gradient(#444, #333);
+	background: linear-gradient(#444, #333);
+	-moz-border-radius-top: 3px 3px 0px 0px;
+	-webkit-border-radius: 3px 3px 0px 0px;
+	border-radius: 3px 3px 0px 0px;
+}
+
+.ent .body{
+	background-color: #fff;
+	padding: 2px 2px 2px 2px;
+
+	margin: 0px;
+	border: none 0px;
+
+}
+.ent ul {
+	list-style: none;
+}
+
+.ent ul.fk li {
+	color: #8FA63C;
+}
+
+.rel {
+	position: absolute;
+}
+
+.relLT {
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+}
+
+.relLB {
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.relRT {
+	border-right: 1px solid #000;
+	border-top: 1px solid #000;
+}
+
+.relRB {
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+input.fieldName{
+	line-height: 16px;
+	border: solid 1px #C67704;
+	padding: 0px;
+	margin: 0px;
+}
+input.fieldName.hidden{
+	display: none;
+}
+
+

@@ -1,0 +1,63 @@
+body{
+    font-family: 'Lucida Console';
+    font-size: 14px;
+  }
+  .eer-diagram {
+    width: 90%;
+    height: 200px;
+    background-color: lightgray;
+    position: absolute;
+    z-index: -99999999;
+  }
+  .eer-table{
+    display: inline-block;
+    border: 2px solid #007acc;
+    max-width: 400px; 
+    background-color: #f5f5f5;
+    position: absolute;
+  } 
+  
+  .eer-table .header {
+    padding: 3px;
+    padding-bottom: 15px;
+    background-color: #007acc;
+    color: white;
+  }
+  
+  .eer-table .column-group {
+    padding: 3px;
+    background-color: #dcdcdc;
+    color: black;
+  }
+  .eer-table .constraints-group {
+    padding: 3px;
+    background-color: #dcdcdc;
+    color: black;
+  }
+  
+  .eer-table .column {
+    padding: 3px;
+    padding-left: 18px;
+  }
+  .eer-table .pk {
+    font-weight: bold;
+    background-color: lightgoldenrodyellow;
+  }
+  
+  .eer-table .column .separator{
+    padding-left: 20px;
+    float: right;
+  }
+  .eer-table .column i{
+    float: right;
+    padding: 0px 3px 3px 3px; 
+  }
+  .eer-table i.fa-key {
+    color: red;
+  }
+  
+  .eer-table i.fa-bolt {
+    color: darkgoldenrod;
+  }
+  
+  

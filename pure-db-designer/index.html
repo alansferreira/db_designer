@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="css.css">
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="dependencies/jquery-1.11.0.min.js"></script>
+    <script src="dependencies/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="dependencies/jquery.connectingLine.js"></script>
+
+    <script src="node_modules/cds-parsers/src/db2-table.parser.js"></script>
+    <script id='app'>
+        var designerModule = angular.module('designerModule', []);
+
+        designerModule.controller('eerDiagram', ($scope) => {
+            $scope.modules = {
+                db2_module: initializeDB2Module()
+            };
+            $scope.tables = [
+                { 
+                    name: 'table1',
+                    columns: [
+                        { name: 'column1' }
+                    ]
+                }
+            ];
+            $scope.parse = () => {
+                $scope.tables = $scope.modules.db2_module.parseTable($scope.script);
+
+            }
+
+        }); 
+    </script>
+ 
+</head>
+
+<body>
+
+    <div ng-app="designerModule">
+        <div ng-controller="eerDiagram">
+            <textarea cols="30" rows="10" ng-model="script" ng-change="parse()"></textarea>
+
+            <eer-entity ng-repeat="table in tables" entity='table'></eer-entity>
+
+            <script type='text/ng-template' id='eer-entity-directive-template'>
+                <div class='eer-table'>
+                    <div class='header'><i class='fas fa-th'></i>{{entity.name}}</div>
+                    <div class='column-group'>Columns</div>
+                    <div ng-repeat="column in entity.columns" class='column pk'>
+                        <span>{{column.name}}</span>
+                        <span class='separator'></span>
+                        <i class='fas fa-key'></i>
+                    </div>
+                    <!-- <div class='column'>
+                        <span>name</span>
+                        <span class='separator'></span>
+                        <i class='fas fa-bolt'></i>
+                    </div>
+                    <div class='column'>
+                        <span>address</span>
+                        <span class='separator'></span>
+                    </div> -->
+                    <div class='constraints-group'>
+                        Constraints
+                    </div>
+                
+                </div>
+            </script>
+            <script id='eer-entity-directive'>
+                var mySVG = $('body').connect();
+
+                designerModule.directive('eerEntity', () => {
+                    return {
+                        restrict: 'E',
+                        scope: {
+                            entity: '=entity'
+                        },
+                        templateUrl: 'eer-entity-directive-template',
+                        link: (scope, elm, attrs) => {
+                            $(elm).draggable({
+                                handle: '.header',
+                                grid: [ 3, 3 ],
+                                preventDefault: true,
+                                drag: function(){
+                                    //document.getElementById("svg-canvas").remove();
+                                    // mySVG.redrawLines();
+                                },
+                                onStop: function(){
+                                    //document.getElementById("svg-canvas").remove();
+                                    // mySVG.redrawLines();
+                                }
+                                }); 
+                        }
+                    };
+                })    
+            </script>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

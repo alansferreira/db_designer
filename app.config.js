@@ -1,4 +1,0 @@
-//behind proxy
-module.exports = {
-
-};

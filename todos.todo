@@ -14,6 +14,15 @@
         ☐ Add feature to delete column and dependencies
         ☐ Add feature to delete table and dependencies like foreign keys
 
+    Store contents:
+        ☐ Create integration with GoogleDrive
+        ☐ Create integration with OneDrive
+
+    UI:
+        ☐ Create beauty header global menu
+        ☐ Upgrade style of eer drawing container
+        ☐ Upgrade table visualization design
+
     MySql tasks:
         ☐ Add feature to generate DDL from model
         ☐ Add feature to parse DDL to model

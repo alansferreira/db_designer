@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ERR Modeling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./eer-app.css" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://rawgit.com/gunjankothari/jquery.connectingLine/master/required/script/jquery.connectingLine.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+
+
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="button" v-on:click="addNewTable" value="add new table"/>
+        <eer-designer v-bind:tables='tables'>
+
+        </eer-designer>
+    </div>
+
+    <script src="./eer-svg-draw.js"></script>
+    <script src="./eer-table-column.js"></script>
+    <script src="./eer-table.js"></script>
+    <script src="./eer-designer-container.js"></script>
+    <script src="./eer-app.js"></script>
+
+</body>
+
+</html>

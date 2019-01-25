@@ -2,29 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug Main Process",
-      "type": "node",
+      "name": "Debug(frontend)-manager",
+      "type": "chrome",
       "request": "launch",
-      "cwd": "${workspaceRoot}",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-      "windows": {
-        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
-      },
-      "program": "${workspaceRoot}/main.js"
-    },
-    {
-      "name": "Debug Renderer Process",
-      "type": "node",
-      "request": "launch",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-      "windows": {
-        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
-      },
-      "runtimeArgs": [
-        "${workspaceRoot}/main.js",
-        "--remote-debugging-port=9222"
-      ],
+      "url": "http://localhost:5500",
+      "sourceMaps": false,
       "webRoot": "${workspaceRoot}"
-    }
+  }
   ]
 }

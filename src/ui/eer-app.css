@@ -28,6 +28,14 @@ body{
     background-color: #dcdcdc;
     color: black;
   }
+  .eer-table .column-group  i{
+    float: right;
+    padding: 0px 3px 3px 3px; 
+  }
+  .eer-table .column-wrapper {
+    white-space: nowrap;
+  }
+
   .eer-table .constraints-group {
     padding: 0px;
     background-color: #dcdcdc;

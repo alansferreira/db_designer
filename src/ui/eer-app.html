@@ -7,15 +7,20 @@
     <title>ERR Modeling</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./eer-app.css" />
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+
     <script src="https://rawgit.com/gunjankothari/jquery.connectingLine/master/required/script/jquery.connectingLine.js"></script>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"/>
     <script src="https://unpkg.com/vue"></script>
 
+    <link rel="stylesheet" href="http://localhost:5501/src/vue-inline-editor.css">
+    <script src="http://localhost:5501/src/vue-inline-editor.js"></script>
+
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="./eer-app.css" />
 
 </head>
 
@@ -28,6 +33,9 @@
         </eer-designer>
     </div>
 
+    <script src="../model/eer-utils.js"></script>
+    <script src="../model/eer-model.js"></script>
+    
     <script src="./eer-svg-draw.js"></script>
     <script src="./eer-table-column.js"></script>
     <script src="./eer-table.js"></script>

@@ -1,37 +1,3 @@
-function makeTablesDraggable(){
-    const eerTables = $('.eer-table');
-    eerTables.draggable({
-        handle: '.header',
-        grid: [ 3, 3 ],
-        preventDefault: true,
-        drag: function(){
-            //document.getElementById("svg-canvas").remove();
-            mySVG.redrawLines();
-        },
-        onStop: function(){
-            //document.getElementById("svg-canvas").remove();
-            mySVG.redrawLines();
-        }
-    }); 
-}
-
-function makeTablesDroppable(){
-    $('.eer-table').droppable({
-        accept: ".eer-table .column",
-        classes: {
-            "ui-droppable-active": "ui-state-active",
-            "ui-droppable-hover": "ui-state-hover"
-        },
-        onStart: function(el) {
-            drag.zIndex = drag.zIndex +1;
-            el.setStyle('z-index',drag.zIndex); //increment!
-        }, 
-        drop: function( event, ui ) {
-            // console.log(ui);
-            // console.log('dropped' + $(ui.draggable).text());
-        }
-    });
-}
 
 Vue.component('eer-table', {
     props: ['table'],
@@ -74,7 +40,7 @@ Vue.component('eer-table', {
     ,
     mounted:() => {
         makeTablesDraggable();
-        makeTablesDroppable();
+        makeColumnsDroppable();
         eerRedrawLines();
     },
     updated: function(){
@@ -94,10 +60,17 @@ Vue.component('eer-table', {
             
             this.table.columns.push(new Column('column_' + Math.random().toString(36).substring(2, 4)));
         },
-        stopedOnEdge: function(ev){
-            const { vie, index } = ev;
-            console.log('stoped on ' + index);
-            
+        stopedOnEdge: function(args){
+            // const { vie, index } = args;
+            // console.log('stoped on ' + index);
+            // const isEnd = (index > 0 );
+
+            // if(!isEnd) return;
+
+            // if(vie.$props.model.name.trim() === '' ) return;
+
+            // this.table.columns.push({});
+
 
         }
 

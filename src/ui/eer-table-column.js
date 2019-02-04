@@ -1,23 +1,7 @@
-function makeColumnsDraggable(){
-    $('.eer-table .column').draggable({
-        revert: true,
-        handle: '.drag-handle',
-        helper: "clone",
-        stack: "div",
-        distance: 0,
-        grid: [ 3, 3 ], 
-        onStart: function(el) {
-            drag.zIndex = drag.zIndex +1;
-            el.setStyle('z-index',drag.zIndex); //increment!
-        }, 
-        stop: function(event, ui){
-        }
-    });
-}
 
 Vue.component('eer-table-column', {
     props: ['table', 'column'],    
-    template: "<div class='column' > \
+    template: "<div class='column' :id='table.schema + \"_\" + table.name + \"_\" + column.name '> \
                 <span class='drag-handle'> \
                     <i class='fas fa-ellipsis-v' /> \
                 </span> \

@@ -57,7 +57,12 @@ class ForeignKey{
      * @param {Table} referenceTable 
      * @param {Column[]} referenceColumns 
      */
-    constructor(table, columns, referenceTable, referenceColumns) {        
+    constructor(table, columns, referenceTable, referenceColumns) {
+        /** @type {string} */ this.tableSchema = table.schema;
+        /** @type {string} */ this.table = table.name;
+        /** @type {string} */ this.referenceSchema = referenceTable.schema;
+        /** @type {string} */ this.referenceTable = referenceTable.name;
+        
         /** @type {string} */ this.name = `${table.name}_${referenceTable.name}_${generateQuickGuid()}_FK`;
         /** @type {ForeignKeyReferences[]} */ this.references = [];
 

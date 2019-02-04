@@ -9,8 +9,8 @@
         ☐ Add feature to toggle column autoincrement
         ☐ Add feature to edit/create indexes
         ☐ Add feature to edit/create foreign keys
-        ☐ Add feature to drag and drop column to create foriegn key
-        ☐ Add feature to render line of foreign keys
+        ✔ Add feature to drag and drop column to create foriegn key @done (2/4/2019, 9:15:59 PM)
+        ✔ Add feature to render line of foreign keys @done (2/4/2019, 9:15:53 PM)
         ☐ Add feature to delete column and dependencies
         ☐ Add feature to delete table and dependencies like foreign keys
         ☐ Add user interface to build queries
